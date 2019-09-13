@@ -1,13 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const DashboardPage = () => (
+const DashboardPage = (props) => (
   <div>
-    <p>You have not yet setup a profile, please add some info</p>
-    <Link to="/create-profile">
-      Create Profile
-    </Link>
+    {
+      props.profile ? (
+        <div>
+          <p>Name: {props.profile.name}</p>
+          <p>Age: {props.profile.age}</p>
+          <p>Emergency Contact Name: {props.profile.emergencyContactName}</p>
+          <p>Emergency Contact Number: {props.profile.emergencyContactNumber}</p>
+        </div>
+      ) : (
+        <div>
+          <p>You have not yet setup a profile, please add some info</p>
+          <Link to="/create-profile">
+            Create Profile
+          </Link>
+        </div>
+      )
+    }
   </div>
 );
 
-export default DashboardPage;
+const mapStateToProps = (state) => {
+  return {
+    profile: state.profile
+  }
+};
+
+export default connect(mapStateToProps)(DashboardPage);

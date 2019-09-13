@@ -25,3 +25,18 @@ export const startCreateProfile = (profileData = {}) => {
     });
   };
 };
+
+// SET_PROFILE
+export const setProfile = (profile) => ({
+  type: 'SET_PROFILE',
+  profile
+});
+
+export const startSetProfile = () => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/profile`).once('value').then((snapshot) => {
+      dispatch(setProfile(snapshot.val()));
+    });
+  };
+};

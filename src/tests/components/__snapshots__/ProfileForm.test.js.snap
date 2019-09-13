@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ProfileForm correctly 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Name"
+    type="text"
+    value=""
+  />
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Age"
+    type="text"
+    value=""
+  />
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Emergency Contact Name"
+    type="text"
+    value=""
+  />
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Emergency Contact Number"
+    type="text"
+    value=""
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;

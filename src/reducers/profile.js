@@ -8,6 +8,8 @@ export default (state = profileReducerDefaultState, action) => {
       return {
         ...action.profile
       };
+    case 'SET_PROFILE':
+      return action.profile;
     default:
       return state;
   }
