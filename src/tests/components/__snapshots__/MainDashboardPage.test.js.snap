@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render MainDashboardPage correctly 1`] = `
+<div>
+  <div>
+    <p>
+      You have not yet setup a profile, please add some info
+    </p>
+    <Link
+      className="button"
+      to="/create-profile"
+    >
+      Create Profile
+    </Link>
+  </div>
+</div>
+`;
