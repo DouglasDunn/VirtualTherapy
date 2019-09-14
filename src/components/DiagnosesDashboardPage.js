@@ -7,7 +7,7 @@ export class DiagnosesDashboardPage extends React.Component {
       <div>
         <div className="page-header">
           <div className="content-container">
-            <h1 className="page-header__title">Diagnoses or Symptons</h1>
+            <h1 className="page-header__title">Diagnoses or Symptoms</h1>
             <Link className="button" to="/add-diagnoses">
               Add Diagnoses
             </Link>

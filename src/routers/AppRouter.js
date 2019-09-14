@@ -4,6 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 import MainDashboardPage from '../components/MainDashboardPage';
 import CreateProfilePage from '../components/CreateProfilePage';
 import DiagnosesDashboardPage from '../components/DiagnosesDashboardPage';
+import AddDiagnosesPage from '../components/AddDiagnosesPage';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
@@ -19,6 +20,7 @@ const AppRouter = () => (
         <PrivateRoute path="/dashboard" component={MainDashboardPage} />
         <PrivateRoute path="/create-profile" component={CreateProfilePage} />
         <PrivateRoute path="/diagnoses" component={DiagnosesDashboardPage} />
+        <PrivateRoute path="/add-diagnoses" component={AddDiagnosesPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

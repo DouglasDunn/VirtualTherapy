@@ -12,7 +12,7 @@ export const MainDashboardPage = (props) => (
           <p>Emergency Contact Name: {props.profile.emergencyContactName}</p>
           <p>Emergency Contact Number: {props.profile.emergencyContactNumber}</p>
           <Link className="button" to="/diagnoses">
-            Add Diagnoses
+            My Diagnoses
           </Link>
         </div>
       ) : (

@@ -11,7 +11,7 @@ exports[`should render DiagnosesDashboardPage correctly 1`] = `
       <h1
         className="page-header__title"
       >
-        Diagnoses or Symptons
+        Diagnoses or Symptoms
       </h1>
       <Link
         className="button"
