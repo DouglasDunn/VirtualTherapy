@@ -29,12 +29,11 @@ export default class DiagnosesForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    // this.props.onSubmit({
-    //   name: this.state.name,
-    //   age: this.state.age,
-    //   emergencyContactName: this.state.emergencyContactName,
-    //   emergencyContactNumber: this.state.emergencyContactNumber,
-    // });
+    this.props.onSubmit({
+      diagnoses: this.state.diagnoses,
+      medication: this.state.medication,
+      time: this.state.time
+    });
   };
 
   render() {

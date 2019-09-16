@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetProfile } from './actions/profile';
+import { startSetDiagnoses } from './actions/diagnoses';
 import { login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -30,6 +31,7 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     store.dispatch(login(user.uid));
+    store.dispatch(startSetDiagnoses());
     store.dispatch(startSetProfile()).then(() => {
       renderApp();
       if (history.location.pathname === '/') {

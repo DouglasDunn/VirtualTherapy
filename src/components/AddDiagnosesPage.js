@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import DiagnosesForm from './DiagnosesForm';
-// import { startAddExpense } from '../actions/expenses';
+import { startAddDiagnoses } from '../actions/diagnoses';
 
 export class AddDiagnosesPage extends React.Component {
-  // onSubmit = (expense) => {
-  //   this.props.startAddExpense(expense);
-  //   this.props.history.push('/');
-  // };
+  onSubmit = (diagnoses) => {
+    this.props.startAddDiagnoses(diagnoses);
+    this.props.history.push('/diagnoses');
+  };
   render() {
     return (
       <div>
@@ -17,20 +17,17 @@ export class AddDiagnosesPage extends React.Component {
           </div>
         </div>
         <div className="content-container">
-          <DiagnosesForm />
+          <DiagnosesForm
+            onSubmit={this.onSubmit}
+          />
         </div>
       </div>
     );
   }
 }
 
-// <ExpenseForm
-//   onSubmit={this.onSubmit}
-// />
+const mapDispatchToProps = (dispatch) => ({
+  startAddDiagnoses: (diagnoses) => dispatch(startAddDiagnoses(diagnoses))
+});
 
-// const mapDispatchToProps = (dispatch) => ({
-//   startAddExpense: (expense) => dispatch(startAddExpense(expense))
-// });
-
-export default AddDiagnosesPage;
-//export default connect(undefined, mapDispatchToProps)(AddExpensePage);
+export default connect(undefined, mapDispatchToProps)(AddDiagnosesPage);

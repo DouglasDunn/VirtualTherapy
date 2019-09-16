@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render DiagnosesDashboardPage correctly 1`] = `
+exports[`should render DiagnosesDashboardPage with diagnoses 1`] = `
 <div>
   <div
     className="page-header"
@@ -40,7 +40,79 @@ exports[`should render DiagnosesDashboardPage correctly 1`] = `
       <div
         className="show-for-desktop"
       >
-        Medication
+        Time
+      </div>
+    </div>
+    <div
+      className="list-body"
+    >
+      <DiagnosesListItem
+        diagnoses="clinical depression"
+        id="1"
+        key="1"
+        medication="zoloft"
+        time="9:30pm"
+      />
+      <DiagnosesListItem
+        diagnoses="allergies"
+        id="2"
+        key="2"
+        medication="advil"
+        time="7:00am"
+      />
+      <DiagnosesListItem
+        diagnoses="coughs"
+        id="3"
+        key="3"
+        medication="benadryl"
+        time="5:00pm"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render DiagnosesDashboardPage with empty message 1`] = `
+<div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Diagnoses or Symptoms
+      </h1>
+      <Link
+        className="button"
+        to="/add-diagnoses"
+      >
+        Add Diagnoses
+      </Link>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <div
+      className="list-header"
+    >
+      <div
+        className="show-for-mobile"
+      >
+        Diagnoses
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Diagnoses
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Time
       </div>
     </div>
     <div
@@ -49,7 +121,9 @@ exports[`should render DiagnosesDashboardPage correctly 1`] = `
       <div
         className="list-item list-item--message"
       >
-        No Diagnoses yet, click the button above to add them.
+        <span>
+          No Diagnoses yet, click the button above to add them.
+        </span>
       </div>
     </div>
   </div>

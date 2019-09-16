@@ -18,7 +18,9 @@ exports[`should render AddDiagnosesPage correctly 1`] = `
   <div
     className="content-container"
   >
-    <DiagnosesForm />
+    <DiagnosesForm
+      onSubmit={[Function]}
+    />
   </div>
 </div>
 `;
