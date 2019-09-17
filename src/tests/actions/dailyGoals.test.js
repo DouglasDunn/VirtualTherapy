@@ -15,8 +15,8 @@ const createMockStore = configureMockStore([thunk]);
 
 beforeEach((done) => {
   const dailyGoalsData = {};
-  dailyGoals.forEach(({ id, goals, completed }) => {
-    dailyGoalsData[id] = { goals, completed };
+  dailyGoals.forEach(({ id, goal, completed }) => {
+    dailyGoalsData[id] = { goal, completed };
   });
   database.ref(`users/${uid}/dailyGoals`).set(dailyGoalsData).then(() => done());
 });

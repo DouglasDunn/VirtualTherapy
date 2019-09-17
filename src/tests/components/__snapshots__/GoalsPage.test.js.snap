@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render GoalsPage with dailyGoals 1`] = `
+exports[`should render GoalsPage with dailyGoals and longTermGoals 1`] = `
 <div>
   <div
     className="page-header"
@@ -46,11 +46,24 @@ exports[`should render GoalsPage with dailyGoals 1`] = `
         key="3"
       />
     </div>
+    <h2>
+      Long-Term Goals
+    </h2>
+    <GoalForm
+      onSubmit={[Function]}
+    />
+    <div
+      className="list-body"
+    >
+      <p>
+        hi
+      </p>
+    </div>
   </div>
 </div>
 `;
 
-exports[`should render GoalsPage with empty message 1`] = `
+exports[`should render GoalsPage with empty messages 1`] = `
 <div>
   <div
     className="page-header"
@@ -82,6 +95,23 @@ exports[`should render GoalsPage with empty message 1`] = `
       >
         <span>
           No daily goals
+        </span>
+      </div>
+    </div>
+    <h2>
+      Long-Term Goals
+    </h2>
+    <GoalForm
+      onSubmit={[Function]}
+    />
+    <div
+      className="list-body"
+    >
+      <div
+        className="list-item list-item--message"
+      >
+        <span>
+          No long-term goals
         </span>
       </div>
     </div>

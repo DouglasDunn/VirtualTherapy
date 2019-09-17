@@ -2,11 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import GoalForm from './GoalForm';
 import DailyGoalListItem from './DailyGoalListItem';
+import LongTermGoalListItem from './LongTermGoalListItem';
 import { startAddDailyGoal } from '../actions/dailyGoals';
+import { startAddLongTermGoal } from '../actions/longTermGoals';
 
 export class GoalsPage extends React.Component {
-  onSubmit = (dailyGoal) => {
+  onSubmitDailyGoal = (dailyGoal) => {
     this.props.startAddDailyGoal(dailyGoal);
+  };
+  onSubmitLongTermGoal = (longTermGoal) => {
+    this.props.startAddLongTermGoal(longTermGoal);
   };
   render() {
     return (
@@ -19,7 +24,7 @@ export class GoalsPage extends React.Component {
         <div className="content-container">
           <h2>Daily Goals</h2>
           <GoalForm
-            onSubmit={this.onSubmit}
+            onSubmit={this.onSubmitDailyGoal}
           />
           <div className="list-body">
             {
@@ -34,6 +39,24 @@ export class GoalsPage extends React.Component {
               )
             }
           </div>
+
+          <h2>Long-Term Goals</h2>
+          <GoalForm
+            onSubmit={this.onSubmitLongTermGoal}
+          />
+          <div className="list-body">
+            {
+              this.props.longTermGoals.length === 0 ? (
+                <div className="list-item list-item--message">
+                  <span>No long-term goals</span>
+                </div>
+              ) : (
+                this.props.longTermGoals.map((longTermGoal) => {
+                  return <LongTermGoalListItem key={longTermGoal.id} {...longTermGoal} />;
+                })
+              )
+            }
+          </div>
         </div>
       </div>
     );
@@ -42,12 +65,14 @@ export class GoalsPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    dailyGoals: state.dailyGoals
+    dailyGoals: state.dailyGoals,
+    longTermGoals: state.longTermGoals
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  startAddDailyGoal: (dailyGoal) => dispatch(startAddDailyGoal(dailyGoal))
+  startAddDailyGoal: (dailyGoal) => dispatch(startAddDailyGoal(dailyGoal)),
+  startAddLongTermGoal: (longTermGoal) => dispatch(startAddLongTermGoal(longTermGoal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GoalsPage);

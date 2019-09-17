@@ -24,7 +24,7 @@ export const startAddDailyGoal = (dailyGoalData = {}) => {
   };
 };
 
-// SET_EXPENSES
+// SET_DAILY_GOALS
 export const setDailyGoals = (dailyGoals) => ({
   type: 'SET_DAILY_GOALS',
   dailyGoals

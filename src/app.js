@@ -6,6 +6,7 @@ import configureStore from './store/configureStore';
 import { startSetProfile } from './actions/profile';
 import { startSetDiagnoses } from './actions/diagnoses';
 import { startSetDailyGoals } from './actions/dailyGoals';
+import { startSetLongTermGoals } from './actions/longTermGoals';
 import { login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -34,6 +35,7 @@ firebase.auth().onAuthStateChanged((user) => {
     store.dispatch(login(user.uid));
     store.dispatch(startSetDiagnoses());
     store.dispatch(startSetDailyGoals());
+    store.dispatch(startSetLongTermGoals());
     store.dispatch(startSetProfile()).then(() => {
       renderApp();
       if (history.location.pathname === '/') {
