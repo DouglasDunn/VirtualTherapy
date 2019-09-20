@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render MedicationHistoryListItem correctly 1`] = `
+<Link
+  className="list-item"
+  to="/edit/1"
+>
+  <div>
+    <h3
+      className="list-item__title"
+    >
+      zoloft
+    </h3>
+    <h3
+      className="list-item__title"
+    >
+      10mg
+    </h3>
+    <h3
+      className="list-item__title"
+    >
+      depression
+    </h3>
+    <h3
+      className="list-item__title"
+    >
+      drowsiness, agitation, tiredness, loss of appetite
+    </h3>
+    <h3
+      className="list-item__title"
+    >
+      yes
+    </h3>
+  </div>
+</Link>
+`;

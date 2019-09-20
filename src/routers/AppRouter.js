@@ -6,6 +6,8 @@ import CreateProfilePage from '../components/CreateProfilePage';
 import DiagnosesDashboardPage from '../components/DiagnosesDashboardPage';
 import AddDiagnosesPage from '../components/AddDiagnosesPage';
 import GoalsPage from '../components/GoalsPage';
+import MedicationHistoryDashboardPage from '../components/MedicationHistoryDashboardPage';
+import AddMedicationHistoryPage from '../components/AddMedicationHistoryPage';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
@@ -23,6 +25,8 @@ const AppRouter = () => (
         <PrivateRoute path="/diagnoses" component={DiagnosesDashboardPage} />
         <PrivateRoute path="/add-diagnoses" component={AddDiagnosesPage} />
         <PrivateRoute path="/goals" component={GoalsPage} />
+        <PrivateRoute path="/medication-history" component={MedicationHistoryDashboardPage} />
+        <PrivateRoute path="/add-medication-history" component={AddMedicationHistoryPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

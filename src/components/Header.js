@@ -13,6 +13,9 @@ export const Header = ({ startLogout }) => (
         <Link className="header__link" to="/diagnoses">
           My Diagnoses
         </Link>
+        <Link className="header__link" to="/medication-history">
+          Medication History
+        </Link>
         <Link className="header__link" to="/goals">
           Goals
         </Link>

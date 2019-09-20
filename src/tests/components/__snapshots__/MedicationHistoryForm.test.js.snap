@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render MedicationHistoryForm correctly 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Medication"
+    type="text"
+    value=""
+  />
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Dose"
+    type="text"
+    value=""
+  />
+  <textarea
+    className="textarea"
+    onChange={[Function]}
+    placeholder="Purpose"
+    value=""
+  />
+  <textarea
+    className="textarea"
+    onChange={[Function]}
+    placeholder="Side Effects"
+    value=""
+  />
+  <textarea
+    className="textarea"
+    onChange={[Function]}
+    placeholder="Current? If no, why not?"
+    value=""
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;
+
+exports[`should render MedicationHistoryForm correctly with medicationHistory data 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Medication"
+    type="text"
+    value=""
+  />
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Dose"
+    type="text"
+    value=""
+  />
+  <textarea
+    className="textarea"
+    onChange={[Function]}
+    placeholder="Purpose"
+    value=""
+  />
+  <textarea
+    className="textarea"
+    onChange={[Function]}
+    placeholder="Side Effects"
+    value=""
+  />
+  <textarea
+    className="textarea"
+    onChange={[Function]}
+    placeholder="Current? If no, why not?"
+    value=""
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;

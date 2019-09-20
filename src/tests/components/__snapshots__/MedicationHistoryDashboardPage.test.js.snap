@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render MedicationHistoryDashboardPage with empty message 1`] = `
+<div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Medication History
+      </h1>
+      <Link
+        className="button"
+        to="/add-medication-history"
+      >
+        Add Medication
+      </Link>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <div
+      className="list-header"
+    >
+      <div
+        className="show-for-mobile"
+      >
+        Medication
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Medication
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Dose
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Purpose
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Side Effects
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Current? If not, why?
+      </div>
+    </div>
+    <div
+      className="list-body"
+    >
+      <div
+        className="list-item list-item--message"
+      >
+        <span>
+          No medication history, click the button above to add them.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render MedicationHistoryDashboardPage with medicationHistories 1`] = `
+<div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Medication History
+      </h1>
+      <Link
+        className="button"
+        to="/add-medication-history"
+      >
+        Add Medication
+      </Link>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <div
+      className="list-header"
+    >
+      <div
+        className="show-for-mobile"
+      >
+        Medication
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Medication
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Dose
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Purpose
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Side Effects
+      </div>
+      <div
+        className="show-for-desktop"
+      >
+        Current? If not, why?
+      </div>
+    </div>
+    <div
+      className="list-body"
+    >
+      <MedicationHistoryListItem
+        current="yes"
+        dose="10mg"
+        id="1"
+        key="1"
+        medication="zoloft"
+        purpose="depression"
+        sideEffects="drowsiness, agitation, tiredness, loss of appetite"
+      />
+      <MedicationHistoryListItem
+        current="yes"
+        dose="50mg"
+        id="2"
+        key="2"
+        medication="tylenol"
+        purpose="headache"
+        sideEffects="itchy, diahrea, constipation"
+      />
+      <MedicationHistoryListItem
+        current="no, because I lost too much weight"
+        dose="100mg"
+        id="3"
+        key="3"
+        medication="advil"
+        purpose="toothache"
+        sideEffects="drowsiness, increase in appetite, weight loss"
+      />
+    </div>
+  </div>
+</div>
+`;

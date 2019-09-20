@@ -26,6 +26,12 @@ exports[`should render Header correctly 1`] = `
       </Link>
       <Link
         className="header__link"
+        to="/medication-history"
+      >
+        Medication History
+      </Link>
+      <Link
+        className="header__link"
         to="/goals"
       >
         Goals
