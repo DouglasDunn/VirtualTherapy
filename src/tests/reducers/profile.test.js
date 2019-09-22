@@ -8,8 +8,11 @@ test('should set default state', () => {
 
 test('should create a profile', () => {
   const profile = {
-    name: 'Tyler Louie',
-    age: 26,
+    firstName: 'Tyler',
+    lastName: 'Louie',
+    emailAddress: 'tyler@gmail.com',
+    dateOfBirth: '04/22/93',
+    gender: 'male',
     emergencyContactName: 'Aaron Banlao',
     emergencyContactNumber: '(408) 476-2398'
   };
@@ -19,6 +22,18 @@ test('should create a profile', () => {
   };
   const state = profileReducer({}, action);
   expect(state).toEqual(profile);
+});
+
+test('should edit a profile', () => {
+  const firstName = 'Jonathan';
+  const action = {
+    type: 'EDIT_PROFILE',
+    updates: {
+      firstName
+    }
+  };
+  const state = profileReducer(profile, action);
+  expect(state.firstName).toBe(firstName);
 });
 
 test('should set profile', () => {

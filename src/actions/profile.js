@@ -11,17 +11,35 @@ export const startCreateProfile = (profileData = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
     const {
-      name = '',
-      age = 0,
+      firstName = '',
+      lastName = '',
+      emailAddress = '',
+      dateOfBirth = '',
+      gender = 'male',
       emergencyContactName = '',
       emergencyContactNumber = ''
     } = profileData;
-    const profile = { name, age, emergencyContactName, emergencyContactNumber };
+    const profile = { firstName, lastName, emailAddress, dateOfBirth, gender, emergencyContactName, emergencyContactNumber };
 
     return database.ref(`users/${uid}/profile`).set(profile).then((ref) => {
       dispatch(createProfile({
         ...profile
       }));
+    });
+  };
+};
+
+// EDIT_PROFILE
+export const editProfile = (updates) => ({
+  type: 'EDIT_PROFILE',
+  updates
+});
+
+export const startEditProfile = (updates) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/profile`).update(updates).then(() => {
+      dispatch(editProfile(updates));
     });
   };
 };

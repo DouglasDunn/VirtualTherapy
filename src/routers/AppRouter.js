@@ -3,6 +3,7 @@ import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import MainDashboardPage from '../components/MainDashboardPage';
 import CreateProfilePage from '../components/CreateProfilePage';
+import EditProfilePage from '../components/EditProfilePage';
 import DiagnosesDashboardPage from '../components/DiagnosesDashboardPage';
 import AddDiagnosesPage from '../components/AddDiagnosesPage';
 import GoalsPage from '../components/GoalsPage';
@@ -22,6 +23,7 @@ const AppRouter = () => (
         <PublicRoute path="/" component={LoginPage} exact={true} />
         <PrivateRoute path="/dashboard" component={MainDashboardPage} />
         <PrivateRoute path="/create-profile" component={CreateProfilePage} />
+        <PrivateRoute path="/edit-profile" component={EditProfilePage} />
         <PrivateRoute path="/diagnoses" component={DiagnosesDashboardPage} />
         <PrivateRoute path="/add-diagnoses" component={AddDiagnosesPage} />
         <PrivateRoute path="/goals" component={GoalsPage} />

@@ -9,17 +9,61 @@ exports[`should render ProfileForm correctly 1`] = `
     autoFocus={true}
     className="text-input"
     onChange={[Function]}
-    placeholder="Name"
+    placeholder="First Name"
     type="text"
     value=""
   />
   <input
     className="text-input"
     onChange={[Function]}
-    placeholder="Age"
+    placeholder="Last Name"
     type="text"
     value=""
   />
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Email Address"
+    type="text"
+    value=""
+  />
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Date of Birth"
+    type="text"
+    value=""
+  />
+  <label>
+    <input
+      checked={true}
+      className="radio-input"
+      onChange={[Function]}
+      type="radio"
+      value="male"
+    />
+    Male
+  </label>
+  <label>
+    <input
+      checked={false}
+      className="radio-input"
+      onChange={[Function]}
+      type="radio"
+      value="female"
+    />
+    Female
+  </label>
+  <label>
+    <input
+      checked={false}
+      className="radio-input"
+      onChange={[Function]}
+      type="radio"
+      value="other"
+    />
+    Other
+  </label>
   <input
     className="text-input"
     onChange={[Function]}

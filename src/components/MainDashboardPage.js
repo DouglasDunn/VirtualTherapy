@@ -7,10 +7,17 @@ export const MainDashboardPage = (props) => (
     {
       props.profile ? (
         <div>
-          <p>Name: {props.profile.name}</p>
-          <p>Age: {props.profile.age}</p>
+          <h2>Profile Information</h2>
+          <p>First Name: {props.profile.firstName}</p>
+          <p>Last Name: {props.profile.lastName}</p>
+          <p>Email Address: {props.profile.emailAddress}</p>
+          <p>Date of Birth: {props.profile.dateOfBirth}</p>
+          <p>Gender: {props.profile.gender}</p>
           <p>Emergency Contact Name: {props.profile.emergencyContactName}</p>
           <p>Emergency Contact Number: {props.profile.emergencyContactNumber}</p>
+          <Link className="button" to="/edit-profile">
+            Edit Profile
+          </Link>
         </div>
       ) : (
         <div>

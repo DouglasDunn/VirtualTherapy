@@ -8,6 +8,11 @@ export default (state = profileReducerDefaultState, action) => {
       return {
         ...action.profile
       };
+    case 'EDIT_PROFILE':
+      return {
+        ...state,
+        ...action.updates
+      };
     case 'SET_PROFILE':
       return action.profile;
     default:
