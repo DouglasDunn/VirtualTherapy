@@ -31,7 +31,7 @@ const mapStateToProps = (state) => ({
   profile: state.profile
 });
 
-const mapDispatchToProps = (dispatch, props) => ({
+const mapDispatchToProps = (dispatch) => ({
   startEditProfile: (profile) => dispatch(startEditProfile(profile))
 });
 

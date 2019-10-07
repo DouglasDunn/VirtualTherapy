@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render AddMedicationHistoryPage correctly 1`] = `
+exports[`should render AddDrugAllergiesPage correctly 1`] = `
 <div>
   <div
     className="page-header"
@@ -11,14 +11,14 @@ exports[`should render AddMedicationHistoryPage correctly 1`] = `
       <h1
         className="page-header__title"
       >
-        Add Medication History
+        Add Drug Allergies
       </h1>
     </div>
   </div>
   <div
     className="content-container"
   >
-    <MedicationHistoryForm
+    <DrugAllergyForm
       onSubmit={[Function]}
     />
   </div>

@@ -17,6 +17,6 @@ test('should render CreateProfilePage correctly', () => {
 
 test('should handle onSubmit', () => {
   wrapper.find('ProfileForm').prop('onSubmit')(profile);
-  expect(history.push).toHaveBeenLastCalledWith('/');
+  expect(history.push).toHaveBeenLastCalledWith('/add-drug-allergies');
   expect(startCreateProfile).toHaveBeenLastCalledWith(profile);
 });

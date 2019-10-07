@@ -1,4 +1,4 @@
-// Profiles Reducer
+// Profile Reducer
 
 const profileReducerDefaultState = {};
 

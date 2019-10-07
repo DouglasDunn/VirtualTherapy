@@ -5,6 +5,7 @@ import diagnosesReducer from '../reducers/diagnoses';
 import dailyGoalsReducer from '../reducers/dailyGoals';
 import longTermGoalsReducer from '../reducers/longTermGoals';
 import medicationHistoryReducer from '../reducers/medicationHistory';
+import drugAllergyReducer from '../reducers/drugAllergy';
 import authReducer from '../reducers/auth';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -17,6 +18,7 @@ export default () => {
       dailyGoals: dailyGoalsReducer,
       longTermGoals: longTermGoalsReducer,
       medicationHistories: medicationHistoryReducer,
+      drugAllergy: drugAllergyReducer,
       auth: authReducer
     }),
     composeEnhancers(applyMiddleware(thunk))

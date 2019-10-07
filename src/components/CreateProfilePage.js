@@ -6,7 +6,7 @@ import { startCreateProfile } from '../actions/profile';
 export class CreateProfilePage extends React.Component {
   onSubmit = (profile) => {
     this.props.startCreateProfile(profile);
-    this.props.history.push('/');
+    this.props.history.push('/add-drug-allergies');
   };
   render() {
     return (

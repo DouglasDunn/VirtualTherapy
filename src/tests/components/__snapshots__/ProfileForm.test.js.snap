@@ -34,9 +34,10 @@ exports[`should render ProfileForm correctly 1`] = `
     type="text"
     value=""
   />
+  Gender:
   <label>
     <input
-      checked={true}
+      checked={false}
       className="radio-input"
       onChange={[Function]}
       type="radio"

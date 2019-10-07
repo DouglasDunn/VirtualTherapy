@@ -28,6 +28,21 @@ export const startCreateProfile = (profileData = {}) => {
   };
 };
 
+// EDIT_PROFILE
+export const editProfile = (updates) => ({
+  type: 'EDIT_PROFILE',
+  updates
+});
+
+export const startEditProfile = (updates) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/profile`).update(updates).then(() => {
+      dispatch(editProfile(updates));
+    });
+  };
+};
+
 // SET_PROFILE
 export const setProfile = (profile) => ({
   type: 'SET_PROFILE',

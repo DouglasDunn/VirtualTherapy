@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addDiagnoses, createDiagnoses } from '../actions/diagnoses';
+import { startAddDiagnoses } from '../actions/diagnoses';
 
 const initialErrorState = {
   diagnosedError: '',
@@ -10,10 +10,20 @@ const initialErrorState = {
 export class AddDiagnosesPage extends React.Component {
   constructor(props) {
     super(props);
+    let radioButton = 'no';
+    let diagnosesArray;
+    if (this.props.diagnoses) {
+      if (Array.isArray(this.props.diagnoses)) {
+        radioButton = 'yes';
+        console.log(Array.isArray(this.props.diagnoses));
+        console.log(this.props.diagnoses);
+        diagnosesArray = this.props.diagnoses.map(({ diagnoses }) => diagnoses).join(', ');
+      }
+    }
 
     this.state = {
-      diagnosed: this.props.diagnoses.length ? 'yes': 'no',
-      diagnosesList: this.props.diagnoses.length ? this.props.diagnoses.map(({diagnoses}) => diagnoses).join(", "): '',
+      diagnosed: this.props.diagnoses ? radioButton: '',
+      diagnosesList: this.props.diagnoses ? diagnosesArray : '',
       ...initialErrorState
     };
   }
@@ -59,12 +69,18 @@ export class AddDiagnosesPage extends React.Component {
     const isValid = this.validate();
     if (isValid) {
       if (this.state.diagnosed === 'no') {
-        this.props.addDiagnoses([]);
-        this.props.history.push('/exercise-questions');
+        this.props.startAddDiagnoses({
+          diagnosed: this.state.diagnosed,
+          diagnosesList: ''
+        });
       } else {
-        this.props.createDiagnoses(this.state.diagnosesList);
-        this.props.history.push('/add-medication');
+        console.log(this.state.diagnosesList);
+        this.props.startAddDiagnoses({
+          diagnosed: this.state.diagnosed,
+          diagnosesList: this.state.diagnosesList
+        });
       }
+      this.props.history.push('/add-medication');
     }
   };
 
@@ -134,8 +150,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addDiagnoses: (diagnoses) => dispatch(addDiagnoses(diagnoses)),
-  createDiagnoses: (diagnoses) => dispatch(createDiagnoses(diagnoses))
+  startAddDiagnoses: (diagnoses) => dispatch(startAddDiagnoses(diagnoses))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddDiagnosesPage);

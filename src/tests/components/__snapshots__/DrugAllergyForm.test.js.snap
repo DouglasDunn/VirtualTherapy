@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DrugAllergyForm correctly 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  Are you allergic to any drugs?
+  <label>
+    <input
+      checked={false}
+      className="radio-input"
+      onChange={[Function]}
+      type="radio"
+      value="yes"
+    />
+    Yes
+  </label>
+  <label>
+    <input
+      checked={false}
+      className="radio-input"
+      onChange={[Function]}
+      type="radio"
+      value="no"
+    />
+    No
+  </label>
+  <textarea
+    className="textarea"
+    onChange={[Function]}
+    placeholder="Type in all the drugs you are allergic to separated by a comma"
+    value=""
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;
+
+exports[`should render DrugAllergyForm correctly with drugAllergy data 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  Are you allergic to any drugs?
+  <label>
+    <input
+      checked={true}
+      className="radio-input"
+      onChange={[Function]}
+      type="radio"
+      value="yes"
+    />
+    Yes
+  </label>
+  <label>
+    <input
+      checked={false}
+      className="radio-input"
+      onChange={[Function]}
+      type="radio"
+      value="no"
+    />
+    No
+  </label>
+  <textarea
+    className="textarea"
+    onChange={[Function]}
+    placeholder="Type in all the drugs you are allergic to separated by a comma"
+    value="Tylenol, Advil, Peptobismol"
+  />
+  <div>
+    <button
+      className="button"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;

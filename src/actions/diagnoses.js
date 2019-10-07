@@ -1,4 +1,4 @@
-import database from '../firebase/firebase';
+import uuid from 'uuid';
 
 // ADD_DIAGNOSES
 export const addDiagnoses = (diagnoses) => ({
@@ -6,45 +6,26 @@ export const addDiagnoses = (diagnoses) => ({
   diagnoses
 });
 
-export const startAddDiagnoses = (diagnosesData = {}) => {
-  return (dispatch, getState) => {
-    const uid = getState().auth.uid;
-    const {
-      diagnoses = '',
-      medication = '',
-      time = ''
-    } = diagnosesData;
-    const diagnosesObject = { diagnoses, medication, time };
-
-    return database.ref(`users/${uid}/diagnoses`).push(diagnosesObject).then((ref) => {
-      dispatch(addDiagnoses({
-        id: ref.key,
-        ...diagnosesObject
-      }));
-    });
-  };
-};
-
-// SET_EXPENSES
-export const setDiagnoses = (diagnoses) => ({
-  type: 'SET_DIAGNOSES',
-  diagnoses
-});
-
-export const startSetDiagnoses = () => {
-  return (dispatch, getState) => {
-    const uid = getState().auth.uid;
-    return database.ref(`users/${uid}/diagnoses`).once('value').then((snapshot) => {
-      const diagnoses = [];
-
-      snapshot.forEach((childSnapshot) => {
-        diagnoses.push({
-          id: childSnapshot.key,
-          ...childSnapshot.val()
-        });
+export const createDiagnoses = (diagnoses) => {
+  return (dispatch) => {
+    diagnoses = diagnoses
+      .split(',')
+      .map(diagnose => {
+        const id = uuid.v4();
+        return {
+          id,
+          diagnoses: diagnose.trim(),
+          medication: "",
+          time: ""
+        };
       });
-
-      dispatch(setDiagnoses(diagnoses));
-    });
-  };
+    dispatch(addDiagnoses(diagnoses));
+  }
 };
+
+// ADD_MEDICATION
+export const addEditMedication = (id, medicationObject) => ({
+  type: 'ADD_EDIT_MEDICATION',
+  id,
+  medicationObject
+});

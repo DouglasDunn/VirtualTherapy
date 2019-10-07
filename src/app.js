@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetProfile } from './actions/profile';
-import { startSetDiagnoses } from './actions/diagnoses';
+// import { startSetDiagnoses } from './actions/diagnoses';
 import { startSetDailyGoals } from './actions/dailyGoals';
 import { startSetLongTermGoals } from './actions/longTermGoals';
 import { startSetMedicationHistories } from './actions/medicationHistory';
+// import { startSetDrugAllergy } from './actions/drugAllergy';
 import { login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -34,10 +35,11 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     store.dispatch(login(user.uid));
-    store.dispatch(startSetDiagnoses());
+    // store.dispatch(startSetDiagnoses());
     store.dispatch(startSetDailyGoals());
     store.dispatch(startSetLongTermGoals());
     store.dispatch(startSetMedicationHistories());
+    // store.dispatch(startSetDrugAllergy());
     store.dispatch(startSetProfile()).then(() => {
       renderApp();
       if (history.location.pathname === '/') {

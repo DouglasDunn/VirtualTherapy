@@ -86,7 +86,7 @@ test('should add a profile with defaults to database and store', (done) => {
     lastName: '',
     emailAddress: '',
     dateOfBirth: '',
-    gender: 'male',
+    gender: '',
     emergencyContactName: '',
     emergencyContactNumber: ''
   };
