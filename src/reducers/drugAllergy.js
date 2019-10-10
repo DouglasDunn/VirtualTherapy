@@ -6,6 +6,7 @@ export default (state = drugAllergyReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_DRUG_ALLERGY':
       return [
+        ...state,
         ...action.drugAllergy
       ];
     // case 'EDIT_PROFILE':
