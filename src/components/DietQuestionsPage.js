@@ -293,11 +293,11 @@ export class DietQuestionsPage extends React.Component {
               />
               I don't drink water.
             </label>
+            <div>
+              <Link className="button" to='exercise-questions'>Previous</Link>
+              <button onClick={this.onSubmit} className="button">Next</button>
+            </div>
           </form>
-          <div>
-            <Link className="button" to='exercise-questions'>Previous</Link>
-            <button onClick={this.onSubmit} className="button">Next</button>
-          </div>
         </div>
       </div>
     );

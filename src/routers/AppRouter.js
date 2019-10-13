@@ -19,6 +19,7 @@ import EditMedicationItemPage from '../components/EditMedicationItemPage';
 import AddDiscontinuedMedicationPage from '../components/AddDiscontinuedMedicationPage';
 import ExerciseQuestionsPage from '../components/ExerciseQuestionsPage';
 import DietQuestionsPage from '../components/DietQuestionsPage';
+import SleepQuestionsPage from '../components/SleepQuestionsPage';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
@@ -47,6 +48,7 @@ const AppRouter = () => (
         <PrivateRoute path="/add-discontinued-medication" component={AddDiscontinuedMedicationPage} />
         <PrivateRoute path="/exercise-questions" component={ExerciseQuestionsPage} />
         <PrivateRoute path="/diet-questions" component={DietQuestionsPage} />
+        <PrivateRoute path="/sleep-questions" component={SleepQuestionsPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

@@ -1,56 +1,57 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addDietQuestions } from '../actions/dietQuestions';
+import { addSleepQuestions } from '../actions/sleepQuestions';
 
-export class DietQuestionsPage extends React.Component {
+export class SleepQuestionsPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      howOftenFruits: this.props.dietQuestions ? this.props.dietQuestions.howOftenFruits : '',
-      howOftenVegetables: this.props.dietQuestions ? this.props.dietQuestions.howOftenVegetables : '',
-      consumeProtein: this.props.dietQuestions ? this.props.dietQuestions.consumeProtein : '',
-      consumeFats: this.props.dietQuestions ? this.props.dietQuestions.consumeFats : '',
-      consumeWater: this.props.dietQuestions ? this.props.dietQuestions.consumeWater : ''
+      hoursOfSleep: this.props.sleepQuestions ? this.props.sleepQuestions.hoursOfSleep : '',
+      sleepSchedule: this.props.sleepQuestions ? this.props.sleepQuestions.sleepSchedule : '',
+      fallingAsleep: this.props.sleepQuestions ? this.props.sleepQuestions.fallingAsleep : '',
+      stayingAsleep: this.props.sleepQuestions ? this.props.sleepQuestions.stayingAsleep : '',
+      wokenUp: this.props.sleepQuestions ? this.props.sleepQuestions.wokenUp : ''
     };
   }
 
-  onHowOftenFruitsChange = (e) => {
-    const howOftenFruits = e.target.value;
-    this.setState(() => ({ howOftenFruits }));
+  onHoursOfSleepChange = (e) => {
+    const hoursOfSleep = e.target.value;
+    this.setState(() => ({ hoursOfSleep }));
   };
 
-  onHowOftenVegetablesChange = (e) => {
-    const howOftenVegetables = e.target.value;
-    this.setState(() => ({ howOftenVegetables }));
+  onSleepScheduleChange = (e) => {
+    const sleepSchedule = e.target.value;
+    this.setState(() => ({ sleepSchedule }));
   };
 
-  onConsumeProteinChange = (e) => {
-    const consumeProtein = e.target.value;
-    this.setState(() => ({ consumeProtein }));
+  onFallingAsleepChange = (e) => {
+    const fallingAsleep = e.target.value;
+    this.setState(() => ({ fallingAsleep }));
   };
 
-  onConsumeFatsChange = (e) => {
-    const consumeFats = e.target.value;
-    this.setState(() => ({ consumeFats }));
+  onStayingAsleepChange = (e) => {
+    const stayingAsleep = e.target.value;
+    this.setState(() => ({ stayingAsleep }));
   };
 
-  onConsumeWaterChange = (e) => {
-    const consumeWater = e.target.value;
-    this.setState(() => ({ consumeWater }));
+  onWokenUpChange = (e) => {
+    const wokenUp = e.target.value;
+    this.setState(() => ({ wokenUp }));
   };
 
   onSubmit = (e) => {
     e.preventDefault();
 
-    this.props.addDietQuestions({
-      howOftenFruits: this.state.howOftenFruits,
-      howOftenVegetables: this.state.howOftenVegetables,
-      consumeProtein: this.state.consumeProtein,
-      consumeFats: this.state.consumeFats,
-      consumeWater: this.state.consumeWater
+    this.props.addSleepQuestions({
+      hoursOfSleep: this.state.hoursOfSleep,
+      sleepSchedule: this.state.sleepSchedule,
+      fallingAsleep: this.state.fallingAsleep,
+      stayingAsleep: this.state.stayingAsleep,
+      wokenUp: this.state.wokenUp
     });
-    this.props.history.push('/sleep-questions');
+    this.props.history.push('/dashboard');
   };
 
   render() {
@@ -67,40 +68,40 @@ export class DietQuestionsPage extends React.Component {
             <label>
               <input
                 type="radio"
-                checked={this.state.howMuch === '8 or more hours.'}
+                checked={this.state.hoursOfSleep === '8 or more hours.'}
                 className="radio-input"
                 value="8 or more hours."
-                onChange={this.onHowMuchChange}
+                onChange={this.onHoursOfSleepChange}
               />
               8 or more hours.
             </label>
             <label>
               <input
                 type="radio"
-                checked={this.state.howMuch === 'Between 6-8 hours.'}
+                checked={this.state.hoursOfSleep === 'Between 6-8 hours.'}
                 className="radio-input"
                 value="Between 6-8 hours."
-                onChange={this.onHowMuchChange}
+                onChange={this.onHoursOfSleepChange}
               />
               Between 6-8 hours.
             </label>
             <label>
               <input
                 type="radio"
-                checked={this.state.howMuch === 'Between 4-6 hours.'}
+                checked={this.state.hoursOfSleep === 'Between 4-6 hours.'}
                 className="radio-input"
                 value="Between 4-6 hours."
-                onChange={this.onHowMuchChange}
+                onChange={this.onHoursOfSleepChange}
               />
               Between 4-6 hours.
             </label>
             <label>
               <input
                 type="radio"
-                checked={this.state.howMuch === 'Less than 4 hours.'}
+                checked={this.state.hoursOfSleep === 'Less than 4 hours.'}
                 className="radio-input"
                 value="Less than 4 hours."
-                onChange={this.onHowMuchChange}
+                onChange={this.onHoursOfSleepChange}
               />
               Less than 4 hours.
             </label>
@@ -109,30 +110,30 @@ export class DietQuestionsPage extends React.Component {
             <label>
               <input
                 type="radio"
-                checked={this.state.howRigorous === 'Yes, I try to follow it everyday.'}
+                checked={this.state.sleepSchedule === 'Yes, I try to follow it everyday.'}
                 className="radio-input"
-                value="Yes, I try to follow it everyday"
-                onChange={this.onHowRigorousChange}
+                value="Yes, I try to follow it everyday."
+                onChange={this.onSleepScheduleChange}
               />
-              Yes, I try to follow it everyday
+              Yes, I try to follow it everyday.
             </label>
             <label>
               <input
                 type="radio"
-                checked={this.state.howRigorous === 'Yes, but I have a hard time sticking to it.'}
+                checked={this.state.sleepSchedule === 'Yes, but I have a hard time sticking to it.'}
                 className="radio-input"
                 value="Yes, but I have a hard time sticking to it."
-                onChange={this.onHowRigorousChange}
+                onChange={this.onSleepScheduleChange}
               />
               Yes, but I have a hard time sticking to it.
             </label>
             <label>
               <input
                 type="radio"
-                checked={this.state.howRigorous === 'No, my sleep schedule is all over the place.'}
+                checked={this.state.sleepSchedule === 'No, my sleep schedule is all over the place.'}
                 className="radio-input"
                 value="No, my sleep schedule is all over the place."
-                onChange={this.onHowRigorousChange}
+                onChange={this.onSleepScheduleChange}
               />
               No, my sleep schedule is all over the place.
             </label>
@@ -141,20 +142,20 @@ export class DietQuestionsPage extends React.Component {
             <label>
               <input
                 type="radio"
-                checked={this.state.howLong === 'Yes'}
+                checked={this.state.fallingAsleep === 'Yes'}
                 className="radio-input"
                 value="Yes"
-                onChange={this.onHowLongChange}
+                onChange={this.onFallingAsleepChange}
               />
               Yes
             </label>
             <label>
               <input
                 type="radio"
-                checked={this.state.howLong === 'No'}
+                checked={this.state.fallingAsleep === 'No'}
                 className="radio-input"
                 value="No"
-                onChange={this.onHowLongChange}
+                onChange={this.onFallingAsleepChange}
               />
               No
             </label>
@@ -163,20 +164,20 @@ export class DietQuestionsPage extends React.Component {
             <label>
               <input
                 type="radio"
-                checked={this.state.howLong === 'Yes'}
+                checked={this.state.stayingAsleep === 'Yes'}
                 className="radio-input"
                 value="Yes"
-                onChange={this.onHowLongChange}
+                onChange={this.onStayingAsleepChange}
               />
               Yes
             </label>
             <label>
               <input
                 type="radio"
-                checked={this.state.howLong === 'No'}
+                checked={this.state.stayingAsleep === 'No'}
                 className="radio-input"
                 value="No"
-                onChange={this.onHowLongChange}
+                onChange={this.onStayingAsleepChange}
               />
               No
             </label>
@@ -185,28 +186,38 @@ export class DietQuestionsPage extends React.Component {
             <label>
               <input
                 type="radio"
-                checked={this.state.howLong === 'Yes'}
+                checked={this.state.wokenUp === 'Well-rested'}
                 className="radio-input"
-                value="Yes"
-                onChange={this.onHowLongChange}
+                value="Well-rested"
+                onChange={this.onWokenUpChange}
               />
-              Yes
+              Well-rested
             </label>
             <label>
               <input
                 type="radio"
-                checked={this.state.howLong === 'No'}
+                checked={this.state.wokenUp === 'Tired'}
                 className="radio-input"
-                value="No"
-                onChange={this.onHowLongChange}
+                value="Tired"
+                onChange={this.onWokenUpChange}
               />
-              No
+              Tired
             </label>
+            <label>
+              <input
+                type="radio"
+                checked={this.state.wokenUp === "Exhausted, like my sleep didn't help me rest."}
+                className="radio-input"
+                value="Exhausted, like my sleep didn't help me rest."
+                onChange={this.onWokenUpChange}
+              />
+              Exhausted, like my sleep didn't help me rest.
+            </label>
+            <div>
+              <Link className="button" to='diet-questions'>Previous</Link>
+              <button onClick={this.onSubmit} className="button">Next</button>
+            </div>
           </form>
-          <div>
-            <button onClick={this.handlePrevious} className="button">Previous</button>
-            <button onClick={this.onSubmit} className="button">Next</button>
-          </div>
         </div>
       </div>
     );
@@ -214,12 +225,11 @@ export class DietQuestionsPage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  diagnoses: state.diagnoses,
-  exerciseQuestions: state.exerciseQuestions
+  sleepQuestions: state.sleepQuestions
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addExerciseQuestions: (exerciseQuestions) => dispatch(addExerciseQuestions(exerciseQuestions))
+  addSleepQuestions: (sleepQuestions) => dispatch(addSleepQuestions(sleepQuestions))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExerciseQuestionsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SleepQuestionsPage);

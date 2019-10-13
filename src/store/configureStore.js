@@ -9,6 +9,7 @@ import drugAllergyReducer from '../reducers/drugAllergy';
 import discontinuedMedicationReducer from '../reducers/discontinuedMedication';
 import exerciseQuestionsReducer from '../reducers/exerciseQuestions';
 import dietQuestionsReducer from '../reducers/dietQuestions';
+import sleepQuestionsReducer from '../reducers/sleepQuestions';
 import authReducer from '../reducers/auth';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -25,6 +26,7 @@ export default () => {
       discontinuedMedication: discontinuedMedicationReducer,
       exerciseQuestions: exerciseQuestionsReducer,
       dietQuestions: dietQuestionsReducer,
+      sleepQuestions: sleepQuestionsReducer,
       auth: authReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
