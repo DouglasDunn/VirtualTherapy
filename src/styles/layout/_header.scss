@@ -1,0 +1,58 @@
+.header {
+    height: 95vh;
+    background: $color-yellow;  /* fallback for old browsers */
+    background-image: -webkit-linear-gradient(
+        to right bottom,
+        rgba($color-yellow, 0.8),
+        rgba($color-yellow-dark-3, 0.8)),
+    url(/images/happy-girls.jpg); /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-yellow, 0.8),
+        rgba($color-yellow-dark-3, 0.8)),
+    url(/images/happy-girls.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__anchor-box {
+      position: absolute;
+      top: 2rem;
+      right: 1rem;
+    }
+
+    &__anchor {
+      &:link,
+      &:visited {
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        transition: all .2s;
+      }
+
+      &:hover {
+        background-color: $color-yellow;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+      }
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

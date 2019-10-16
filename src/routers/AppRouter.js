@@ -20,6 +20,7 @@ import AddDiscontinuedMedicationPage from '../components/AddDiscontinuedMedicati
 import ExerciseQuestionsPage from '../components/ExerciseQuestionsPage';
 import DietQuestionsPage from '../components/DietQuestionsPage';
 import SleepQuestionsPage from '../components/SleepQuestionsPage';
+import LandingPage from '../components/LandingPage';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
@@ -32,6 +33,7 @@ const AppRouter = () => (
     <div>
       <Switch>
         <PublicRoute path="/" component={LoginPage} exact={true} />
+        <PublicRoute path="/landing-page" component={LandingPage} />
         <PrivateRoute path="/dashboard" component={MainDashboardPage} />
         <PrivateRoute path="/create-profile" component={ProfileForm} />
         <PrivateRoute path="/edit-profile" component={EditProfilePage} />
