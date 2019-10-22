@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { startLogin } from '../actions/auth';
 
 export const LoginPage = ({ startLogin }) => (
-  <div>
+  <div className="landing-page-container">
     <header className="header">
       <div className="header__anchor-box">
         <a href="#!" className="header__anchor" onClick={startLogin}>Log in</a>
@@ -93,6 +93,17 @@ export const LoginPage = ({ startLogin }) => (
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section-choose-us" id="section-features">
+        <div className="choose-us__text-box">
+          <h2 className="heading-secondary">
+            Why Choose Us?
+          </h2>
+          <p className="paragraph">
+            We created this application with the intention of helping the sufferers of mental illness. Like a therapist, we help to keep you held accountable for the managing of your mental health. Our application allows you to track your symptoms, medications, and daily health goals- all with the push of a button. We are committed to providing these resources for FREE. Why? Because mental illness is given to us for free but help and treatment costs money. And everyone deserves to get help.
+          </p>
         </div>
       </section>
     </main>

@@ -1,0 +1,28 @@
+.background {
+  // background-image: linear-gradient(to right bottom, $color-yellow, $color-yellow-dark-3);
+  background-image: linear-gradient(
+    to right bottom,
+    $color-yellow-light-3,
+    $color-yellow);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  padding: 8rem 30rem;
+  // min-height: 100vh;
+}
+
+.container {
+  max-width: 120rem;
+  // margin: 8rem auto;
+  // margin: 0 auto;
+  // background-color: $color-grey-light-3;
+  background-color: $color-grey-light-3;
+  box-shadow: $shadow-dark;
+  border-radius: 65px;
+
+  min-height: 50rem;
+}
+
+.landing-page-container {
+  padding: 3rem;
+}

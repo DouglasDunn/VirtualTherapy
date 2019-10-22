@@ -7,10 +7,8 @@
 // @import './components/page-header';
 // @import './components/input-group';
 // @import './components/inputs';
-// @import './components/form';
 // @import './components/visibility';
 // @import './components/list';
-// @import './components/loader';
 
 @import "abstracts/mixins";
 @import "abstracts/variables";
@@ -19,12 +17,16 @@
 @import "base/typography";
 @import "base/utilities";
 
+@import "components/loader";
 @import "components/button";
 @import "components/composition";
 @import "components/feature-box";
+@import "components/form";
+@import "components/choose-us";
 
 @import "layout/footer";
 @import "layout/grid";
 @import "layout/header";
+@import "layout/container";
 
 @import "pages/home";
