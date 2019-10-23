@@ -11,6 +11,16 @@
         rgba($color-yellow, 0.8),
         rgba($color-yellow-dark-3, 0.8)),
     url(/images/happy-girls.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    // background-image: linear-gradient(
+    //     to right bottom,
+    //     rgba(#d7faf6, 0.8),
+    //     rgba(#93f2e7, 0.8)),
+    // url(/images/happy-girls.jpg);
+    // background-image: linear-gradient(
+    //     to right bottom,
+    //     rgba(#d7faf6, 0.8),
+    //     rgba(#29e4cf, 0.8));
+    background-color: #d7faf6;
     background-size: cover;
     background-position: top;
     background-attachment: fixed;
@@ -29,7 +39,7 @@
       &:visited {
         display: inline-block;
         padding: 1rem 2rem;
-        color: $color-white;
+        color: $color-black;
         text-decoration: none;
         text-transform: uppercase;
         font-size: 1.8rem;

@@ -1,22 +1,67 @@
 .feature-box {
-    background-color: rgba($color-white, .8);
+    // background-color: rgba($color-white, .8);
     font-size: 1.5rem;
-    padding: 2.5rem;
+    // padding: 2.5rem;
     text-align: center;
-    border-radius: 3px;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    // border-radius: 3px;
+    // box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     transition: transform .3s;
 
-    &__icon {
-        font-size: 6rem;
-        margin-bottom: .5rem;
-        display: inline-block;
-        background-image: linear-gradient(to right, $color-yellow-light-3, $color-yellow);
-        -webkit-background-clip: text;
-        color: transparent;
+    &__front {
+      position: relative;
+      // background-color: rgba($color-white, .8);
+      background-color: $color-white;
+      height: 20rem;
+      padding: 2.5rem 2.5rem;
+      border-radius: 3px;
+      box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+      z-index: 1;
+      transform: translateY(10rem);
+      transition: all 0.5s;
     }
 
-    &:hover {
-        transform: translateY(-1.5rem) scale(1.03);
+    &__back {
+      background-color: rgba($color-white, .8);
+      // background-color: $color-white;
+      height: 20rem;
+      padding: 2.5rem 2.5rem;
+      border-radius: 3px;
+      box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+      transform: translateY(-10rem);
+      transition: all 0.5s;
+    }
+
+    &__icon {
+      font-size: 6rem;
+      margin-bottom: .5rem;
+      display: inline-block;
+      background-image: linear-gradient(to right, $color-yellow-light-3, $color-yellow);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    // &:hover {
+    //     transform: translateY(-1.5rem) scale(1.03);
+    // }
+
+    &:hover &__front {
+      transform: translateY(0);
+      background-color: rgba(#f1b10f, .8);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:hover &__icon {
+      color: $color-white;
+    }
+
+    &:hover h3 {
+      color: $color-white;
+    }
+
+    &:hover &__back {
+      transform: translateY(0);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
     }
 }

@@ -6,8 +6,8 @@ export const LoginPage = ({ startLogin }) => (
   <div className="landing-page-container">
     <header className="header">
       <div className="header__anchor-box">
-        <a href="#!" className="header__anchor" onClick={startLogin}>Log in</a>
-        <a href="#!" className="header__anchor" onClick={startLogin}>Sign up</a>
+        <a href="#!" className="btn-ghost" onClick={startLogin}>Log in</a>
+        <a href="#!" className="btn btn--yellow" onClick={startLogin}>Sign up</a>
       </div>
       <div className="header__text-box">
         <h1 className="heading-primary">
@@ -15,7 +15,7 @@ export const LoginPage = ({ startLogin }) => (
           <span className="heading-primary--sub">It's free to be happy</span>
         </h1>
 
-        <a href="#section-about" className="btn btn--white btn--animated">Learn more</a>
+        <a href="#section-about" className="btn btn--yellow btn--animated">Learn more</a>
       </div>
     </header>
 
@@ -36,7 +36,7 @@ export const LoginPage = ({ startLogin }) => (
 
             <h3 className="heading-tertiary u-margin-bottom-small">Help you set goals and do your favorite things</h3>
             <p className="paragraph">
-              Setting goals are important because the more goals you hit, the more natural serotonin builds up in your brain. We also help you keep track of how you feel and what things trigger certain emotions so that we can give you suggestions on how to a healthier and happier you!
+              Setting goals is important for finding success in all aspects of life, including health. Making time for your favorite things is also crucial for your mental health. We help you create goals and motivate you towards accomplishing them. We also help you keep track of how you feel and what things trigger certain emotions so that we can give you suggestions on how to a healthier and happier you!
             </p>
 
             <a href="#section-features" className="btn-text">Learn more &rarr;</a>
@@ -56,54 +56,83 @@ export const LoginPage = ({ startLogin }) => (
         <div className="row">
           <div className="col-1-of-4">
             <div className="feature-box">
-              <i className="feature-box__icon icon-basic-todolist-pencil"></i>
-              <h3 className="heading-tertiary u-margin-bottom-small">Set goals</h3>
-              <p className="feature-box__text">
-                We help you set the right goals so that you can accomplish them one by one.
-              </p>
+              <div className="feature-box__front">
+                <i className="feature-box__icon icon-basic-todolist-pencil"></i>
+
+                <h3 className="heading-tertiary u-margin-bottom-small">Set goals</h3>
+              </div>
+
+              <div className="feature-box__back">
+                <p className="feature-box__text">
+                  We help you set the right goals so that you can accomplish them one by one.
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="col-1-of-4">
             <div className="feature-box">
-              <i className="feature-box__icon icon-basic-laptop"></i>
-              <h3 className="heading-tertiary u-margin-bottom-small">Access therapy anywhere</h3>
-              <p className="feature-box__text">
-                You have access to therapy anywhere in the world. No need to travel to an office.
-              </p>
+              <div className="feature-box__front">
+                <i className="feature-box__icon icon-basic-laptop"></i>
+
+                <h3 className="heading-tertiary u-margin-bottom-small">Access therapy anywhere</h3>
+              </div>
+
+              <div className="feature-box__back">
+                <p className="feature-box__text">
+                  You have access to therapy anywhere in the world. No need to travel to an office.
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="col-1-of-4">
             <div className="feature-box">
-              <i className="feature-box__icon icon-basic-key"></i>
-              <h3 className="heading-tertiary u-margin-bottom-small">Key to happiness</h3>
-              <p className="feature-box__text">
-                We have done enough research to discover the key to happiness to help you live a better life.
-              </p>
+              <div className="feature-box__front">
+                <i className="feature-box__icon icon-basic-key"></i>
+
+                <h3 className="heading-tertiary u-margin-bottom-small">Key to happiness</h3>
+              </div>
+
+              <div className="feature-box__back">
+                <p className="feature-box__text">
+                  We have done enough research to discover the key to happiness to help you live a better life.
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="col-1-of-4">
             <div className="feature-box">
-              <i className="feature-box__icon icon-basic-heart"></i>
-              <h3 className="heading-tertiary u-margin-bottom-small">Happy healthy life</h3>
-              <p className="feature-box__text">
-                Get started now so that you can experience what it's like to be happy and healthy again.
-              </p>
+              <div className="feature-box__front">
+                <i className="feature-box__icon icon-basic-heart"></i>
+
+                <h3 className="heading-tertiary u-margin-bottom-small">Happy healthy life</h3>
+              </div>
+
+              <div className="feature-box__back">
+                <p className="feature-box__text">
+                  Get started now so that you can experience what it's like to be happy and healthy again.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section className="section-choose-us" id="section-features">
-        <div className="choose-us__text-box">
-          <h2 className="heading-secondary">
-            Why Choose Us?
-          </h2>
-          <p className="paragraph">
-            We created this application with the intention of helping the sufferers of mental illness. Like a therapist, we help to keep you held accountable for the managing of your mental health. Our application allows you to track your symptoms, medications, and daily health goals- all with the push of a button. We are committed to providing these resources for FREE. Why? Because mental illness is given to us for free but help and treatment costs money. And everyone deserves to get help.
-          </p>
+        <div className="row">
+          <div className="col-2-of-3">
+            <h2 className="heading-secondary u-margin-bottom-small">
+              Why Choose Us?
+            </h2>
+
+            <p className="paragraph">
+              We created this application with the intention of helping the sufferers of mental illness. Like a therapist, we help to keep you held accountable for the managing of your mental health. Our application allows you to track your symptoms, medications, and daily health goals- all with the push of a button. We are committed to providing these resources for FREE. Why? Because mental illness is given to us for free but help and treatment costs money. And everyone deserves to get help.
+            </p>
+
+            <a href="#!" className="btn btn--yellow" onClick={startLogin}>Sign Up</a>
+          </div>
         </div>
       </section>
     </main>

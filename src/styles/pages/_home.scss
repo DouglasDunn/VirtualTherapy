@@ -5,7 +5,7 @@
 }
 
 .section-features {
-    padding: 20rem 0;
+    padding: 20rem 0 25rem 0;
     background-image: linear-gradient(
         to right bottom,
         rgba($color-yellow, 0.8),
@@ -22,10 +22,10 @@
 }
 
 .section-choose-us {
-  height: 70vh;
   background-image: url(/images/leaves.jpg);
   background-size: cover;
   background-position: center;
-  padding: 20rem 0;
+  padding: 15rem 0;
+  margin-top: -10rem;
   position: relative;
 }
