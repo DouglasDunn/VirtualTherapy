@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { startLogin } from '../actions/auth';
 
 export const LoginPage = ({ startLogin }) => (
-  <div className="landing-page-container">
+  <div className="landing-page__container">
     <header className="header">
       <div className="header__anchor-box">
         <a href="#!" className="btn-ghost" onClick={startLogin}>Log in</a>

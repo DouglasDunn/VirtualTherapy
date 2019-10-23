@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createProfile } from '../actions/profile';
+import { startLogout } from '../actions/auth';
 
 const initialErrorState = {
   firstNameError: '',
@@ -127,160 +128,182 @@ export class ProfileForm extends React.Component {
 
   render() {
     return (
-      <div className="background">
-        <div className="container">
-          <div className="u-center-text u-margin-bottom-small">
-            <h2 className="heading-secondary u-margin-top-big">
-              Virtual Therapy
+      <div>
+        <header className="form__header">
+          <div className="form__header--logo-box">
+            <h2 className="heading-secondary">
+              <span className="heading-secondary-header">Virtual Therapy</span>
             </h2>
           </div>
 
-          <div className="form-box">
-            <form className="form" onSubmit={this.onSubmit}>
-              {this.state.firstNameError && <p className="form__error">{this.state.firstNameError}</p>}
-              <div className="form__group-inline">
-                <input
-                  autoFocus
-                  type="text"
-                  className="form__input"
-                  placeholder="First Name"
-                  id="first-name"
-                  required
-                  value={this.state.firstName}
-                  onChange={this.onFirstNameChange}
-                />
-                <label htmlFor="first-name" className="form__label">
-                  First Name
-                </label>
-              </div>
+          <div className="form__header--button-box">
+            <button className="btn btn--yellow" onClick={this.props.startLogout}>Logout</button>
+          </div>
+        </header>
 
-              {this.state.lastNameError && <p className="form__error">{this.state.lastNameError}</p>}
-              <div className="form__group-inline">
-                <input
-                  type="text"
-                  className="form__input"
-                  placeholder="Last Name"
-                  id="last-name"
-                  required
-                  value={this.state.lastName}
-                  onChange={this.onLastNameChange}
-                />
-                <label htmlFor="last-name" className="form__label">
-                  Last Name
-                </label>
-              </div>
+        <div className="form__background">
+          <div className="form__container">
+            <div className="u-center-text u-margin-bottom-small">
+              <h2 className="heading-secondary u-margin-top-big">
+                Virtual Therapy
+              </h2>
+            </div>
 
-              {this.state.emailAddressError && <p className="form__error">{this.state.emailAddressError}</p>}
-              <div className="form__group">
-                <input
-                  type="email"
-                  className="form__input"
-                  placeholder="Email Address"
-                  id="email-address"
-                  required
-                  value={this.state.emailAddress}
-                  onChange={this.onEmailAddressChange}
-                />
-                <label htmlFor="email-address" className="form__label">
-                  Email Address
-                </label>
-              </div>
-
-              {this.state.dateOfBirthError && <p className="form__error">{this.state.dateOfBirthError}</p>}
-              <div className="form__group">
-                <input
-                  type="text"
-                  className="form__input"
-                  placeholder="Date of Birth"
-                  id="date-of-birth"
-                  required
-                  value={this.state.dateOfBirth}
-                  onChange={this.onDateOfBirthChange}
-                />
-                <label htmlFor="date-of-birth" className="form__label">
-                  Date of Birth
-                </label>
-              </div>
-
-              {this.state.genderError && <p className="form__error">{this.state.genderError}</p>}
-              <div className="form__group u-margin-bottom-medium">
-                <div className="form__radio-group">
+            <div className="form__box">
+              <form className="form" onSubmit={this.onSubmit}>
+                {this.state.firstNameError && <p className="form__error">{this.state.firstNameError}</p>}
+                <div className="form__group-inline">
                   <input
-                    type="radio"
-                    className="form__radio-input"
-                    id="male"
-                    name="gender"
-                    checked={this.state.gender === 'male'}
-                    value="male"
-                    onChange={this.onGenderChange}
+                    autoFocus
+                    type="text"
+                    className="form__input"
+                    placeholder="First Name"
+                    id="first-name"
+                    required
+                    value={this.state.firstName}
+                    onChange={this.onFirstNameChange}
                   />
-                  <label htmlFor="male" className="form__radio-label">
-                    <span className="form__radio-button"></span>
-                    Male
+                  <label htmlFor="first-name" className="form__label">
+                    First Name
                   </label>
                 </div>
 
-                <div className="form__radio-group">
+                {this.state.lastNameError && <p className="form__error">{this.state.lastNameError}</p>}
+                <div className="form__group-inline">
                   <input
-                    type="radio"
-                    className="form__radio-input"
-                    id="female"
-                    name="gender"
-                    checked={this.state.gender === 'female'}
-                    value="female"
-                    onChange={this.onGenderChange}
+                    type="text"
+                    className="form__input"
+                    placeholder="Last Name"
+                    id="last-name"
+                    required
+                    value={this.state.lastName}
+                    onChange={this.onLastNameChange}
                   />
-                  <label htmlFor="female" className="form__radio-label">
-                    <span className="form__radio-button"></span>
-                    Female
+                  <label htmlFor="last-name" className="form__label">
+                    Last Name
                   </label>
                 </div>
 
-                <div className="form__radio-group">
+                {this.state.emailAddressError && <p className="form__error">{this.state.emailAddressError}</p>}
+                <div className="form__group">
                   <input
-                    type="radio"
-                    className="form__radio-input"
-                    id="other"
-                    name="gender"
-                    checked={this.state.gender === 'other'}
-                    value="other"
-                    onChange={this.onGenderChange}
+                    type="email"
+                    className="form__input"
+                    placeholder="Email Address"
+                    id="email-address"
+                    required
+                    value={this.state.emailAddress}
+                    onChange={this.onEmailAddressChange}
                   />
-                  <label htmlFor="other" className="form__radio-label">
-                    <span className="form__radio-button"></span>
-                    Other
+                  <label htmlFor="email-address" className="form__label">
+                    Email Address
                   </label>
                 </div>
-              </div>
 
-              {this.state.emergencyContactNameError && <p className="form__error">{this.state.emergencyContactNameError}</p>}
-              <div className="form__group">
-                <input
-                  type="text"
-                  className="form__input"
-                  placeholder="Date of Birth"
-                  id="date-of-birth"
-                  required
-                  value={this.state.dateOfBirth}
-                  onChange={this.onDateOfBirthChange}
-                />
-                <label htmlFor="date-of-birth" className="form__label">
-                  Date of Birth
-                </label>
-              </div>
-              
-              {this.state.emergencyContactNumberError && <p className="form__error">{this.state.emergencyContactNumberError}</p>}
-              <input
-                type="text"
-                placeholder="Emergency Contact Number"
-                className="text-input"
-                value={this.state.emergencyContactNumber}
-                onChange={this.onEmergencyContactNumberChange}
-              />
-              <div>
-                <button className="button">Next</button>
-              </div>
-            </form>
+                {this.state.dateOfBirthError && <p className="form__error">{this.state.dateOfBirthError}</p>}
+                <div className="form__group">
+                  <input
+                    type="text"
+                    className="form__input"
+                    placeholder="Date of Birth"
+                    id="date-of-birth"
+                    required
+                    value={this.state.dateOfBirth}
+                    onChange={this.onDateOfBirthChange}
+                  />
+                  <label htmlFor="date-of-birth" className="form__label">
+                    Date of Birth
+                  </label>
+                </div>
+
+                {this.state.genderError && <p className="form__error">{this.state.genderError}</p>}
+                <div className="form__group u-margin-bottom-medium">
+                  <div className="form__radio-group">
+                    <input
+                      type="radio"
+                      className="form__radio-input"
+                      id="male"
+                      name="gender"
+                      checked={this.state.gender === 'male'}
+                      value="male"
+                      onChange={this.onGenderChange}
+                    />
+                    <label htmlFor="male" className="form__radio-label">
+                      <span className="form__radio-button"></span>
+                      Male
+                    </label>
+                  </div>
+
+                  <div className="form__radio-group">
+                    <input
+                      type="radio"
+                      className="form__radio-input"
+                      id="female"
+                      name="gender"
+                      checked={this.state.gender === 'female'}
+                      value="female"
+                      onChange={this.onGenderChange}
+                    />
+                    <label htmlFor="female" className="form__radio-label">
+                      <span className="form__radio-button"></span>
+                      Female
+                    </label>
+                  </div>
+
+                  <div className="form__radio-group">
+                    <input
+                      type="radio"
+                      className="form__radio-input"
+                      id="other"
+                      name="gender"
+                      checked={this.state.gender === 'other'}
+                      value="other"
+                      onChange={this.onGenderChange}
+                    />
+                    <label htmlFor="other" className="form__radio-label">
+                      <span className="form__radio-button"></span>
+                      Other
+                    </label>
+                  </div>
+                </div>
+
+                {this.state.emergencyContactNameError && <p className="form__error">{this.state.emergencyContactNameError}</p>}
+                <div className="form__group">
+                  <input
+                    type="text"
+                    className="form__input"
+                    placeholder="Emergency Contact Name"
+                    id="emergency-contact-name"
+                    required
+                    value={this.state.emergencyContactName}
+                    onChange={this.onEmergencyContactNameChange}
+                  />
+                  <label htmlFor="emergency-contact-name" className="form__label">
+                    Emergency Contact Name
+                  </label>
+                </div>
+
+                {this.state.emergencyContactNumberError && <p className="form__error">{this.state.emergencyContactNumberError}</p>}
+                <div className="form__group">
+                  <input
+                    type="text"
+                    className="form__input"
+                    placeholder="Emergency Contact Number"
+                    id="emergency-contact-number"
+                    required
+                    value={this.state.emergencyContactNumber}
+                    onChange={this.onEmergencyContactNumberChange}
+                  />
+                  <label htmlFor="emergency-contact-number" className="form__label">
+                    Emergency Contact Number
+                  </label>
+                </div>
+
+                <div className="form__group u-center-text">
+                  <button className="btn btn--yellow">Next</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -293,7 +316,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createProfile: (profile) => dispatch(createProfile(profile))
+  createProfile: (profile) => dispatch(createProfile(profile)),
+  startLogout: () => dispatch(startLogout())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileForm);

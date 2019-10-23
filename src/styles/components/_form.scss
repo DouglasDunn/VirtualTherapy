@@ -1,8 +1,29 @@
-.form-box {
-  padding: 6rem;
-}
+// .form-box {
+//   padding: 6rem;
+// }
 
 .form {
+  &__header {
+    position: relative;
+    height: 12.5vh;
+
+    &--logo-box {
+      position: absolute;
+      top: .6rem;
+      left: 4rem;
+    }
+
+    &--button-box {
+      position: absolute;
+      top: 1rem;
+      right: 4rem;
+    }
+  }
+
+  &__box {
+    padding: 6rem;
+  }
+
   &__group-inline {
     display: inline-block;
     width: 50%
