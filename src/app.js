@@ -42,13 +42,17 @@ firebase.auth().onAuthStateChanged((user) => {
     // store.dispatch(startSetDrugAllergy());
     store.dispatch(startSetProfile()).then(() => {
       renderApp();
+      console.log(history.location.pathname);
       if (history.location.pathname === '/') {
+        console.log('history pathname /');
         history.push('/dashboard');
       }
     });
   } else {
     store.dispatch(logout());
+    console.log('about to history pushed dashboard');
     renderApp();
-    history.push('/');
+    console.log('history pushed dashboard');
+    // history.push('/'); // ***** I changed this **************** //
   }
 });

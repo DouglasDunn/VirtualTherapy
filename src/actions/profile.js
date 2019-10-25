@@ -29,10 +29,16 @@ export const startCreateProfile = (profileData = {}) => {
 };
 
 // SET_PROFILE
-export const setProfile = (profile) => ({
-  type: 'SET_PROFILE',
-  profile
-});
+export const setProfile = (profile) => {
+  if (profile === null) {
+    profile = {};
+  }
+
+  return {
+    type: 'SET_PROFILE',
+    profile
+  };
+};
 
 export const startSetProfile = () => {
   return (dispatch, getState) => {

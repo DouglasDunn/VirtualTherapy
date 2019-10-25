@@ -4,6 +4,16 @@ import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
 
 export class MainDashboardPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    console.log(props.profile);
+
+    if (Object.entries(props.profile).length === 0) {
+      this.props.history.push('/create-profile');
+    }
+  }
+
   render() {
     return (
       <div className="dashboard__background">

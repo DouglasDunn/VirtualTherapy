@@ -105,7 +105,7 @@
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.4rem 3.9rem;
+    padding: 1.5rem 4rem;
     display: inline-block;
     border-radius: 10rem;
     transition: all .2s;
@@ -116,15 +116,15 @@
     border: none;
     cursor: pointer;
 
-    border: 2px solid $color-white;
+    // border: 2px solid $color-white;
     color: $color-white;
-    box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    // box-shadow: 0 1rem 2rem rgba($color-black, .2);
     margin-right: 1.5rem;
   }
 
   &:hover {
     background-color: #f1b10f;
-    border: 2px solid #f1b10f;
+    // border: 2px solid #f1b10f;
     color: #fff;
     transform: translateY(-3px);
     box-shadow: 0 1rem 2rem rgba($color-black, .2);
@@ -132,8 +132,8 @@
 
   &:active,
   &:focus {
-    background-color: #f1b10f;
-    border: 2px solid #f1b10f;
+    background-color: #f2b927;
+    // border: 2px solid #f1b10f;
     color: #fff;
     outline: none;
     transform: translateY(-1px);

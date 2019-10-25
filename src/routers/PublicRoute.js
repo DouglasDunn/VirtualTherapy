@@ -39,8 +39,8 @@ export const PublicRoute = ({
         isAuthenticated ? (
           <Redirect to="/dashboard" />
         ) : (
-            <Component {...props} />
-          )
+          <Component {...props} />
+        )
       )} />
     );
 }
